@@ -1,0 +1,55 @@
+<%- include("partials/header") -%>
+    <div class="container header-wrapper">
+        <header>
+            <nav class="navbar flex">
+                <a href="/">
+                    <img src="images/spacex-logo-black-and-white.png" alt="Spacex Logo" style="height: 26.25px; width: 210px;">
+                </a>
+                <div class="navigation">
+                    <ul class="nav-links flex">
+                      <li class="nav-item"><a class="hover-animation" href="/vehicles/falcon-9/">Falcon 9</a></li>
+                      <li class="nav-item"><a class="hover-animation" href="/vehicles/falcon-heavy/">Falcon Heavy</a></li>
+                      <li class="nav-item"><a class="hover-animation" href="/vehicles/dragon/">Dragon</a></li>
+                      <li class="nav-item"><a class="hover-animation" href="/vehicles/starship/">Starship</a></li>
+                      <li class="nav-item"><a class="hover-animation" href="/human-spaceflight/">Human Spaceflight</a></li>
+                      <li class="nav-item"><a class="hover-animation" href="/rideshare/">Rideshare</a></li>
+                    </ul>
+                  </div>
+            </nav>
+        </header>
+    </div>
+    
+    <!-- ************************************** -->
+    <!-- ------------------------- Sections -->
+    <!-- ************************************** -->
+    
+    <% homeSections.forEach(section => { %>
+        <div class="section">
+            <div class="background" style=" <%= "background-image:url(images/home/" + section.url + ");" %>">
+            <div class="container">
+                <div class="section-inner">
+
+                    <!-- check if section has h2 -->
+                    <% if(section.hasOwnProperty('h4')) { %>
+                        <h4 class="is-anima to-uppercase"> <%= section.h4 %>  </h4>
+                    <% } %>
+                    
+                    <h2 class="is-anima to-uppercase"> <%= section.h2 %>  </h2>
+                    <a class="" href="">
+                        <button class="is-anima btn hover-animation to-uppercase">
+                            <!-- check if button is about read more or re-watch -->
+                            <% if(section.hasOwnProperty('reWatch')) { %>
+                                <%= section.reWatch %>
+                            <% } else { %>
+                                <%= section.learnMore %>
+                            <% } %>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <% }); %>
+    
+
+    <%- include("partials/footer"); -%>

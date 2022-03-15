@@ -1,0 +1,74 @@
+/* ****************************************** */
+/* --------------------Utilities */
+/* Utility for containers */
+/* ****************************************** */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ****************************************** */
+/* utility for btns */
+/* ****************************************** */
+.btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    font-size: 13px;
+    font-weight: 800;
+    min-width: 170px;
+    min-height: 60px;
+    margin-top: 35px;
+    padding: 0 10px;
+    z-index: 1;
+}
+
+/* ****************************************** */
+/* utility for hover animation */
+/* ****************************************** */
+.animateFromBottom {
+    position: relative;
+    animation: bottomToTop 1.7s cubic-bezier(.25,1,.25,1);
+}
+  
+@keyframes bottomToTop {
+    0%   {transform: translateY(100px);
+        opacity:0;}
+    100% {transform: translateY(0px);
+        opacity:1;}
+}
+
+.hover-animation {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+  
+.hover-animation::after {
+    background-color: #fff;
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    transform: scaleX(0);
+    bottom: -3px;
+    left: 0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    z-index: -1;
+}
+  
+.hover-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.to-uppercase {
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

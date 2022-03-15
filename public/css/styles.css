@@ -1,0 +1,152 @@
+/* ****************************************** */
+/* General */
+/* leadout effects on load body */
+/* ****************************************** */
+
+body.vh-100 {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.loaded .fade{
+    opacity: 0;
+}
+
+.fade-me-out-wrapper .fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black,black);
+    -webkit-transition: all .3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+            transition: all .3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+            z-index: 999;
+}
+
+
+/* ****************************************** */
+/* -----------------Navigationbar*/
+/* ****************************************** */
+.header-wrapper {
+    position: relative;
+}
+header {
+    position: fixed;
+    top: 0;
+    height: 100px;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+.navbar img {
+    position: relative;
+    bottom: 4px;
+}
+
+.navigation {
+    margin-left: 20px;
+}
+
+.nav-item a {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+/* ****************************************** */
+/*---------------------- SECTIONS */
+/* ****************************************** */
+.section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* backgrounds */
+.background {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.section .container {
+    position: relative;
+    height: 100%;
+}
+
+.section-inner {
+    position: absolute;
+    bottom: 15%;
+    left: 2rem;
+    max-width: 520px;
+}
+
+h4.animateFromBottom {
+    animation: bottomToTop 1.7s cubic-bezier(.25,1,.25,1);
+}
+h2.animateFromBottom {
+    animation: bottomToTop 1.9s cubic-bezier(.25,1,.25,1);
+}
+button.animateFromBottom {
+    animation: bottomToTop 2.1s cubic-bezier(.25,1,.25,1);
+}
+
+
+.btn.hover-animation::after {
+    height: 100%;
+    transform: scaleX(1);
+    transform: scaleY(0);
+    bottom: 0;
+    transform-origin: center top;
+    z-index: -1;
+}
+
+.btn.hover-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: center bottom;
+}
+
+/* ****************************************** */
+/* Footer */
+/* ****************************************** */
+.footer {
+    background: #000;
+    color: #979797;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.footer span {
+    font-size: 10px;
+    margin: 0 20px;
+}
+
+.footer p {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.75;
+    margin: 15px 0;
+}
+
+.footer p a {
+    -webkit-transition: all .5s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+            transition: all .5s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.footer p a:hover {
+    color: #8b939b;
+}
+
+.footer p a.social {
+    display: inline-block;
+    margin: 0 20px;
+}
