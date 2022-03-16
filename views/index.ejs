@@ -1,5 +1,5 @@
 <%- include("partials/header") -%>
-<div class="header-container hover-animation">
+<div id="header" class="header-container hover-animation">
     <div class="container header-wrapper">
         <header class="header">
             <nav class="navbar flex">
@@ -24,7 +24,6 @@
     <!-- ************************************** -->
     <!-- ------------------------- Sections -->
     <!-- ************************************** -->
-    
     <% homeSections.forEach(section => { %>
         <div class="section">
             <div class="background" style=" <%= "background-image:url(images/home/" + section.url + ");" %>">
